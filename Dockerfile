@@ -1,8 +1,5 @@
-FROM quay.io/smileyfritz/ubi8:latest
+FROM image-registry.openshift-image-registry.svc:5000/openshift/httpd:2.4-el8
 COPY build/ /var/www/html/
-
-# Takes a long time...
-RUN yum install --disableplugin=subscription-manager httpd -y && rm -rf /var/cache/yum
 
 COPY conf/httpd.conf /etc/httpd/conf/httpd.conf
 
