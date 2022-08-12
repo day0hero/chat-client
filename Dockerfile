@@ -3,8 +3,8 @@ COPY build/ /var/www/html/
 
 COPY conf/httpd.conf /etc/httpd/conf/httpd.conf
 
-RUN chgrp -R 0 /var/log/httpd /var/run/httpd /etc/httpd /var/www/html \
-  && chmod -R g=u /var/log/httpd /var/run/httpd /etc/httpd /var/www/html 
+#RUN chgrp -R 0 /var/log/httpd /var/run/httpd /etc/httpd /var/www/html \
+#  && chmod -R g=u /var/log/httpd /var/run/httpd /etc/httpd /var/www/html 
 
 EXPOSE 8080
 USER 1001
